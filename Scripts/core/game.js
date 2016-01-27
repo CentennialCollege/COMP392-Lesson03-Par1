@@ -37,6 +37,7 @@ var cube;
 var plane;
 var sphere;
 var ambientLight;
+var ambientColour;
 var spotLight;
 var directionalLight;
 var control;
@@ -78,7 +79,8 @@ function init() {
     scene.add(sphere);
     console.log("Add a Sphere Primitive");
     // Add an AmbientLight to the scene
-    ambientLight = new AmbientLight(0x0c0c0c);
+    ambientColour = "#0c0c0c";
+    ambientLight = new AmbientLight(ambientColour);
     scene.add(ambientLight);
     console.log("Added an Ambient Light to Scene");
     // Add a SpotLight to the scene
@@ -89,7 +91,7 @@ function init() {
     console.log("Added a Spot Light to Scene");
     // add controls
     gui = new GUI();
-    control = new Control(0.02, 0.03, "#0c0c0c");
+    control = new Control(0.02, 0.03, ambientColour);
     addControl(control);
     // Add framerate stats
     addStatsObject();
